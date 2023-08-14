@@ -1,0 +1,59 @@
+@import './static.scss';
+nav{
+  display: flex;
+  justify-content: space-between;
+  height: 5em;
+  align-items: center;
+  background-color: $color1;
+  .logo{
+    margin-left: 3%;
+    font: 3rem $font1 ;
+    color: $color2;
+  }
+  .navElements{
+    margin-right: 6%;
+    display: flex;
+    gap: 3rem;
+    justify-content: center;
+    align-items: center;
+    font: 1.3rem $font2 ;
+    .icon{
+      display: none;
+      color: $color2;
+    }
+    .navLinks{
+      color: $color2;
+      >ul{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 9%;
+        >li{
+          list-style: none;
+          a{
+            color: $color2;
+            position: relative;
+            display: inline-block;
+            text-decoration: none;
+            &:after{
+              content: "";
+              display: block;
+              position: absolute;
+              width: 0;
+              bottom: 0;
+              height: 2px;
+              margin: -5px 0;
+              left: 0;
+              color: $color2;
+              background-color: $color3;
+              transition: all 0.4s ease-in 0s;
+            }
+            &:hover:after{
+               width: 100%;
+            }
+          }
+        }
+      }
+    }
+  }
+}
