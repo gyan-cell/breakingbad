@@ -4,6 +4,8 @@ nav{
   justify-content: space-between;
   height: 5em;
   align-items: center;
+  position: sticky;
+  z-index: 100;
   background-color: $color1;
   .logo{
     margin-left: 3%;
@@ -19,14 +21,26 @@ nav{
     font: 1.3rem $font2 ;
     .icon{
       display: none;
+      display: none;
       color: $color2;
     }
-    .navLinks{
-      color: $color2;
-      >ul{
+    .navLinksPhone{
+      display: block;
+      position: fixed;
+      opacity: 0;
+      top: 0;
+      bottom: 0;
+      left: -100%;
+      transform: translateX(-100%);
+      transition: all 3s ease;
+         >ul{
         display: flex;
         justify-content: center;
         align-items: center;
+        transition: all 3s ease;
+        width: 100%;
+        height: 100%;
+        flex-direction: column;
         gap: 9%;
         >li{
           list-style: none;
@@ -53,7 +67,73 @@ nav{
             }
           }
         }
+      } 
+    }
+    .navLinks{
+      color: $color2;
+      >ul{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 9%;
+        >li{
+          list-style: none;
+          a{
+            color: $color2;
+            position: relative;
+            display: inline-block;
+            text-decoration: none;
+            &:after{
+              content: "";
+              display: block;
+              position: absolute;
+              width: 0;
+              bottom: 0;
+              height: 2px;
+              margin: -5px 0;
+              left: 0;
+              color: $color2;
+              background-color: $color3;
+              transition: all 4s ease-in 0s;
+            }
+            &:hover:after{
+               width: 100%;
+            }
+          }
+        }
       }
     }
   }
+}
+
+@media screen and (max-width: 920px) {
+  nav{
+    .logo{
+      font-size: 2rem;
+    }
+    .navElements{
+       .icon{
+         font-size: 2rem;
+         display: block;
+         z-index: 110;
+       }
+      
+      .navLinks{
+        display: none;
+      }
+      .navLinksPhone{
+        left: 0%;
+        width: 100%;
+        display: flex;
+        transform: translateX(0);
+        justify-content: center;
+        align-items: center;
+        background-color: $color1trans;
+        opacity: 1;
+        height:50vh;
+        // transition: transform 3s;
+      }
+  } 
+}
+
 }
