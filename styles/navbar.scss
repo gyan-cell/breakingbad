@@ -74,49 +74,48 @@ nav{
        }
       
       .navLinksPhone{
-      display: block;
-      position: fixed;
-      opacity: 0;
-      top: 0;
-      bottom: 0;
-      left: 0;
-      transform: translateY(-100%);
-      transition: transform 1s ease;
-         >ul{
         display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 100%;
-        height: 100%;
-        flex-direction: column;
-        gap: 9%;
-        >li{
-          list-style: none;
-          a{
-            color: $color2;
-            position: relative;
-            display: inline-block;
-            text-decoration: none;
-            &:after{
-              content: "";
-              display: block;
-              position: absolute;
-              width: 0;
-              bottom: 0;
-              height: 2px;
-              margin: -5px 0;
-              left: 0;
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        transform: translateY(-100%);
+        transition: transform 1s ease;
+        >ul{
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 100%;
+          height: 100%;
+          flex-direction: column;
+          gap: 9%;
+          >li{
+            list-style: none;
+            a{
               color: $color2;
-              background-color: $color3;
-              transition: transform 0.3s ease-in 0s;
-            }
-            &:hover:after{
-               width: 100%;
+              position: relative;
+              display: inline-block;
+              text-decoration: none;
+              &:after{
+                content: "";
+                display: block;
+                position: absolute;
+                width: 0;
+                bottom: 0;
+                height: 2px;
+                margin: -5px 0;
+                left: 0;
+                color: $color2;
+                background-color: $color3;
+                transition: transform 0.3s ease-in 0s;
+              }
+              &:hover:after{
+                width: 100%;
+              }
             }
           }
-        }
-      } 
-    }
+        } 
+      }
       .navLinksPhone{
         left: 0%;
         width: 100%;
@@ -126,7 +125,7 @@ nav{
         align-items: center;
         background-color: $color1trans;
         opacity: 1;
-        height:40%;
+        height:50%;
         // transition: transform 3s;
       }
       .active{
