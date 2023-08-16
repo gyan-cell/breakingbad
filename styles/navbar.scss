@@ -96,22 +96,6 @@ nav{
               position: relative;
               display: inline-block;
               text-decoration: none;
-              &:after{
-                content: "";
-                display: block;
-                position: absolute;
-                width: 0;
-                bottom: 0;
-                height: 2px;
-                margin: -5px 0;
-                left: 0;
-                color: $color2;
-                background-color: $color3;
-                transition: transform 0.3s ease-in 0s;
-              }
-              &:hover:after{
-                width: 100%;
-              }
             }
           }
         } 
@@ -120,13 +104,11 @@ nav{
         left: 0%;
         width: 100%;
         display: flex;
-        // transform: translateX(0);
         justify-content: center;
         align-items: center;
         background-color: $color1trans;
         opacity: 1;
-        height:50%;
-        // transition: transform 3s;
+        height:40%;
       }
       .active{
        transform: translateY(0);
