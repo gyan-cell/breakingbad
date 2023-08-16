@@ -4,6 +4,7 @@ import { useState } from "react";
 import { AiOutlineBars } from "react-icons/ai";
 import { HiOutlineX } from "react-icons/hi";
 
+// <div className={navPhone ? "navLinksPhone" : "navLinks"}>
 function NavElements() {
   const [navPhone, setnavPhone] = useState(false);
   return (
@@ -16,7 +17,7 @@ function NavElements() {
       >
         {navPhone ? <HiOutlineX /> : <AiOutlineBars />}
       </div>
-      <div className={navPhone ? "navLinksPhone" : "navLinks"}>
+      <div className={navPhone ? "navLinksPhone active" : "navLinksPhone"}>
         <ul>
           <li>
             <Link href={"/"}>Home</Link>

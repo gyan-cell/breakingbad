@@ -25,51 +25,6 @@ nav{
       color: $color2;
     }
     .navLinksPhone{
-      display: block;
-      position: fixed;
-      opacity: 0;
-      top: 0;
-      bottom: 0;
-      left: -100%;
-      transform: translateX(-100%);
-      transition: all 3s ease;
-         >ul{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        transition: all 3s ease;
-        width: 100%;
-        height: 100%;
-        flex-direction: column;
-        gap: 9%;
-        >li{
-          list-style: none;
-          a{
-            color: $color2;
-            position: relative;
-            display: inline-block;
-            text-decoration: none;
-            &:after{
-              content: "";
-              display: block;
-              position: absolute;
-              width: 0;
-              bottom: 0;
-              height: 2px;
-              margin: -5px 0;
-              left: 0;
-              color: $color2;
-              background-color: $color3;
-              transition: all 0.4s ease-in 0s;
-            }
-            &:hover:after{
-               width: 100%;
-            }
-          }
-        }
-      } 
-    }
-    .navLinks{
       color: $color2;
       >ul{
         display: flex;
@@ -94,7 +49,7 @@ nav{
               left: 0;
               color: $color2;
               background-color: $color3;
-              transition: all 4s ease-in 0s;
+              transition: all 0.7s ease 0s;
             }
             &:hover:after{
                width: 100%;
@@ -118,22 +73,65 @@ nav{
          z-index: 110;
        }
       
-      .navLinks{
-        display: none;
-      }
+      .navLinksPhone{
+      display: block;
+      position: fixed;
+      opacity: 0;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      transform: translateY(-100%);
+      transition: transform 1s ease;
+         >ul{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        flex-direction: column;
+        gap: 9%;
+        >li{
+          list-style: none;
+          a{
+            color: $color2;
+            position: relative;
+            display: inline-block;
+            text-decoration: none;
+            &:after{
+              content: "";
+              display: block;
+              position: absolute;
+              width: 0;
+              bottom: 0;
+              height: 2px;
+              margin: -5px 0;
+              left: 0;
+              color: $color2;
+              background-color: $color3;
+              transition: transform 0.3s ease-in 0s;
+            }
+            &:hover:after{
+               width: 100%;
+            }
+          }
+        }
+      } 
+    }
       .navLinksPhone{
         left: 0%;
         width: 100%;
         display: flex;
-        transform: translateX(0);
+        // transform: translateX(0);
         justify-content: center;
         align-items: center;
         background-color: $color1trans;
         opacity: 1;
-        height:50vh;
+        height:40%;
         // transition: transform 3s;
       }
+      .active{
+       transform: translateY(0);
+      }
   } 
-}
-
+  }
 }
