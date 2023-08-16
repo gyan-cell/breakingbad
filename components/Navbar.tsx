@@ -7,7 +7,7 @@ const Navbar = () => {
   return (
     <nav>
       <div className="logo">
-        Breaking Bad.
+        <span></span>Breaking <span></span>Bad.
       </div>
       <NavElements />
     </nav>
