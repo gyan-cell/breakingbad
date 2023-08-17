@@ -1,7 +1,10 @@
 import { connectDb } from "@/utilities/connectDb";
 import { NextApiRequest, NextApiResponse } from "next";
 
-export default async function (req: NextApiRequest, res: NextApiResponse) {
+export default async function (
+  req: NextApiRequest,
+  res: NextApiResponse,
+): Promise<void> {
   const connection = await connectDb();
   if (req.method !== "GET") {
     res.status(400).json({
