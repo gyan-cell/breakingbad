@@ -1,5 +1,4 @@
 import React from "react";
-import styles from "../styles/HeroPage.scss";
 import "../styles/HeroPage.scss";
 import img from "../public/walter.jpg";
 import img1 from "../public/logo.svg";
@@ -8,7 +7,6 @@ import Link from "next/link";
 const HeroPage = () => {
   return (
     <div className="hero">
-      <Image src={img} alt="Hero" fill className={styles.image} />
       <div className="content">
         <div className="hero1">
           <h1>
@@ -29,6 +27,9 @@ const HeroPage = () => {
               <Link href={"/skyler"}>Reasons To Despise Skyler</Link>
             </button>
           </div>
+        </div>
+        <div className="hero2" >
+          <Image src={img1} alt="hello" />
         </div>
       </div>
     </div>

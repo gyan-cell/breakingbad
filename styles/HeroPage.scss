@@ -5,12 +5,13 @@
   display: flex;
   // padding: 3%;
   z-index: 0;
-  background-color: $color1trans;
+  background-color: $color1;
   .content{
     display: flex;
     width: 100%;
     height: 100%;
-    background-color: $color2trans;
+    background-color: $color2;
+    background-color: $color1;
     position: relative;
     z-index: 1;
     .image{
@@ -54,18 +55,19 @@
           height: 3rem;
           font: 1rem $font2;
           padding: 0.5rem;
-          background-color: $color2trans;
+          background-color: $color1trans;
           // width: 20%;
-          // border-radius: 16px;
+          border-radius: 16px;
           &:nth-of-type(2){
             background-color: transparent;
+            color: $color3;
             // width: 60%;
           }
           &:hover{
             cursor: pointer;
           }
           >a{
-            color: $color2;
+            color: $color3;
             width: 100%;
             height: 100%;
           }
@@ -73,6 +75,7 @@
       }
     }
     .hero2{
+      padding: 3%;
       height: 100%;
       // position: relative;
       width: 50%;
@@ -82,7 +85,7 @@
         object-fit: contain;
       }
       svg{
-        color: $color2;
+        color: $color3;
       }
     }
   }
@@ -116,8 +119,10 @@
 @media screen and (max-width: 720px) {
   .hero{
     .content{
-      height: 25rem;
+      flex-direction: column-reverse;
+      height:fit-content;
       .hero1{
+        margin-bottom: 3%;
         width: 100%;
         h1{
           font-size: 1.9rem;
@@ -132,6 +137,44 @@
       }
       .btns{
         flex-direction: column;
+      }
+      .hero2{
+        width: 100%;
+        img{
+          height: auto;
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: 420px) {
+  .hero{
+    .content{
+      flex-direction: column-reverse;
+      height:fit-content;
+      .hero1{
+        margin-bottom: 7%;
+        width: 100%;
+        h1{
+          font-size: 1.9rem;
+          span{
+            font-size: 2rem;
+          }
+        }
+        p{
+          font-size: 1.2rem;
+          width: 100%;
+        }
+      }
+      .btns{
+        flex-direction: column;
+      }
+      .hero2{
+        width: 100%;
+        height: 15rem;
+        img{
+          height: 100%;
+        }
       }
     }
   }
