@@ -1,6 +1,5 @@
 import { serialize } from "cookie";
 import { NextApiResponse } from "next";
-// import { serialize } from "cookie";
 
   export const cookieSetter = (res:NextApiResponse, token:string, set:boolean) => {
   res.setHeader(
