@@ -1,17 +1,17 @@
-import { setCookie } from "cookies-next";
-import { NextApiResponse } from "next";
+import {  NextApiResponse } from "next";
+import {  NextRequest, NextResponse } from "next/server";
 
-const cookieSetter = (
-  res: NextApiResponse,
-  token: string,
-  set: boolean,
-) => {
-  setCookie("token", set ? token : "", {
-    path: "/",
-    httpOnly: true,
-    maxAge: set ? 30 * 24 * 60 * 60 * 1000 : 0,
-  });
-};
+
+function cookieSetter(req:NextRequest,res:NextApiResponse,token:string,set:boolean){
+  const response = NextResponse.next();
+  return response.cookies.set('token',token,{
+    path:'/',
+    httpOnly:true,
+    maxAge:set ? 30*24*60*60*1000 : 0
+  })
+}
+
+
 
 export default cookieSetter;
 
