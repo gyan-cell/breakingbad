@@ -21,4 +21,4 @@ const schema  = new Schema<UserTypes>({
   }
 })
 
-export const User = model<UserTypes>('User',schema);
+export const User = mongoose.models.User || model<UserTypes>('User',schema);
