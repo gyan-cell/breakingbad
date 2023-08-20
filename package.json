@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@auth/mongodb-adapter": "^1.0.0",
     "@types/bcrypt": "^5.0.0",
     "@types/jsonwebtoken": "^9.0.2",
     "@types/node": "20.5.0",
@@ -18,12 +19,15 @@
     "cloudinary": "^1.40.0",
     "cookies-next": "^2.1.2",
     "jsonwebtoken": "^9.0.1",
+    "mongodb": "^5.7.0",
     "mongoose": "^7.4.3",
     "next": "13.4.13",
+    "next-auth": "^4.23.1",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-icons": "^4.10.1",
     "sass": "^1.65.1",
+    "types": "file:@auth/mongodb-adapter",
     "typescript": "5.1.6"
   },
   "devDependencies": {
