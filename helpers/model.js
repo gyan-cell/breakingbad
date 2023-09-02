@@ -1,27 +1,26 @@
-import mongoose from "mongoose";
+import mongoose, { Schema } from "mongoose";
 
-interface User {
-  name: string;
-  email: string;
-  password: string;
-  isAdmin: boolean;
-}
 
-const schema = new  mongoose.Schema<User>({
+const schema = new Schema({
   name:{
+    type:String,
     required:[true,"Please Enter The Name ..."],
     unique:true
   },
   email:{
+    type:String,
     required:[true,"Please Enter The Email..."],
     unique:true
   },
   password:{
+    type:String,
     required:[true,"Please Enter The Email..."],
     unique:true
   },
   isAdmin:{
+    type:Boolean
   },
 })
 
-export const users = mongoose.models.user || mongoose.model("user",schema);
+const users = mongoose.models.user || mongoose.model("user",schema);
+export default users;

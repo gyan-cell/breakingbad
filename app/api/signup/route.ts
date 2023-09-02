@@ -1,16 +1,15 @@
 import connectDb from "@/helpers/connectDb";
-import { users } from "@/helpers/model";
 import { NextRequest, NextResponse } from "next/server";
 import bcrypt from "bcrypt";
-
+import users from "../../../helpers/model";
 connectDb();
 
 export async function POST(request: NextRequest) {
   try {
     const reqBody = await request.json();
-    const { userName, email, password } = reqBody;
+    const { name, email, password } = reqBody;
 
-    const user = await users.findOne(email);
+    const user = await users.findOne({ email });
 
     if (user) {
       return NextResponse.json(
@@ -24,7 +23,7 @@ export async function POST(request: NextRequest) {
     const hasher = await bcrypt.genSalt(10);
     const hashedPassword = await bcrypt.hash(password, hasher);
     const newUser = new users({
-      userName,
+      name,
       email,
       password: hashedPassword,
     });
@@ -42,5 +41,11 @@ export async function POST(request: NextRequest) {
     );
   } catch (error: any) {
     console.log(error.message);
+    return NextResponse.json(
+      { error: error.message },
+      {
+        status: 404,
+      },
+    );
   }
 }
