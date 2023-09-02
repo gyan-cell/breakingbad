@@ -10,7 +10,7 @@ const HeroPage = () => {
       <div className="content">
         <div className="hero1">
           <h1>
-            <span>I</span> <span> Am </span> <span>Walter </span>White.
+            <span>I</span><span>Am</span> <span>Walter </span>White.
           </h1>
           <p>
             "Breaking Bad" is a television series that chronicles the
