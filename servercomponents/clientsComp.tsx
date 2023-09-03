@@ -31,6 +31,9 @@ function NavElements() {
           <li>
             <Link href={"/episodes"}>Episodes</Link>
           </li>
+          <li>
+            <Link href={"/login"}>login</Link>
+          </li>
         </ul>
       </div>
     </div>
