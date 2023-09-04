@@ -17,6 +17,7 @@
     "@types/node": "20.5.0",
     "@types/react": "18.2.20",
     "@types/react-dom": "18.2.7",
+    "@vinejs/vine": "^1.6.0",
     "bcrypt": "^5.1.1",
     "cloudinary": "^1.40.0",
     "cookies-next": "^2.1.2",
