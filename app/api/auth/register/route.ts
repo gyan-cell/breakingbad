@@ -15,11 +15,17 @@ connectDb();
 export async function POST(request: NextRequest) {
   try {
     const body: UserPayload = await request.json();
+    console.log(1);
+    
     vine.errorReporter = () => new ErrorReporter();
+    console.log(2);
     const validator = vine.compile(registerSchema);
-    const output = await validator.validate(body);
+    console.log(3);
+    // const output = await validator.validate(body);
+    // const output = await validator.validate(body);
+    console.log(4);
     try {
-      const user = await User.findOne({ email: output.email });
+      const user = await User.findOne({ email: body.email });
       if (user) {
         return NextResponse.json(
           {
@@ -30,8 +36,8 @@ export async function POST(request: NextRequest) {
         );
       } else {
         const hasher = bcrypt.genSaltSync(10);
-        output.password = bcrypt.hashSync(output.password, hasher);
-        await User.create(output);
+        body.password = bcrypt.hashSync(body.password, hasher);
+        await User.create(body);
         return NextResponse.json(
           {
             msg: "User Created SuccessFully...",
