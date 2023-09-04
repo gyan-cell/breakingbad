@@ -16,9 +16,9 @@ const userSchema = new Schema({
   password: {
     type: Schema.Types.String,
   },
-  avtar: {
-    required: false,
-    type: Schema.Types.String,
+  isAdmin: {
+    default:false,
+    type: Schema.Types.Boolean,
   },
 });
 

@@ -10,6 +10,7 @@ interface UserPayload {
   email: string;
   name: string;
   password: string;
+  isAdmin:boolean
 }
 connectDb();
 export async function POST(request: NextRequest) {
