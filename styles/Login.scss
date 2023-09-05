@@ -1,0 +1,32 @@
+@import './static.scss';
+
+.loginContainer{
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+  width: 100%;
+  align-items: center;
+  .loginFieldContainer{
+    position: relative;
+    .rimg{
+      z-index: 0;
+      height: 100%;
+      width: 100%;
+    }
+    img{
+      z-index: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .loginField{
+      z-index: 111;
+      width: 100%;
+      height: 100%;
+      background-color:$color2trans ;
+      position: sticky;
+    }
+    width: 100%;
+    height: 100%;
+  }
+}

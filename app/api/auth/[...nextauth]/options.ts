@@ -10,16 +10,25 @@ export const authOptions: AuthOptions = {
   },
   callbacks: {
     async signIn({ user, account, profile, email, credentials }) {
+      console.log(11);
+
       connectDb();
+
+      console.log(12);
       try {
         const findUser = await User.findOne({ email: user.email });
+        console.log(13);
         if (findUser) {
+          console.log(14);
           return true;
         }
         await User.create({ email: user.email, name: user.name });
+        console.log(15);
         return true;
       } catch (error) {
         console.log("The error is ", error);
+        console.log(16);
+
         return false;
       }
     },
@@ -51,7 +60,10 @@ export const authOptions: AuthOptions = {
     }),
     GithubProvider({
       clientId: process.env.GITHUB_CLIENT_ID!,
-      clientSecret: process.env.GITHUB_CLIENT_PASSWORD!,
+      clientSecret: process.env.GITHUB_CLIENT_SECRET!,
     }),
   ],
+  session: {
+    maxAge: 30 * 24 * 60 * 60,
+  },
 };

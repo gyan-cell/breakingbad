@@ -3,13 +3,13 @@
 .hero{
   position: relative;
   display: flex;
+    width: 100%;
+    height: 100vh;
   // padding: 3%;
   z-index: 0;
   background-color: $color1;
   .content{
     display: flex;
-    width: 100%;
-    height: 100%;
     background-color: $color2;
     background-color: $color1;
     position: relative;
@@ -21,7 +21,7 @@
         object-fit: cover;
       }
     }
-    height: 32rem;
+    height: 100%;
     >.hero1{
       padding: 3%;
       display: flex;
